@@ -1,16 +1,12 @@
-let imageContainer = document.querySelector(".img-container");
-
-// Listen for any clicks within the img-container div
-imageContainer.addEventListener("click", function(event) {
-    let element = event.target;
-
-    // 
-    if (condition) {
-        
-    }
 
 
+setInterval(function(){
+    console.log("hello world")
+},1000);
 
-
-});
-
+let timer = 75;
+let intervalId =setInterval(function(){
+    timer--
+    console.log(timer);
+},1000);
+clearInterval(intervalId);
