@@ -34,8 +34,8 @@ function quizStart() {
 
 function getQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
-    let promptEl = document.getElementById("question-title")
-    promptEl.textContent = currentQuestion.prompt;
+    let titleEl = document.getElementById("question-title")
+    titleEl.textContent = currentQuestion.title;
     choicesEl.innerHTML = "";
     currentQuestion.choices.forEach(function(choice, i) {
         let choiceBtn = document.createElement("button");
@@ -117,7 +117,7 @@ function checkForEnter(event) {
         saveHighscore();
     }
 }
-
+initialsEl.onkeyup = checkForEnter;
 
 // Save user's score with submit button.
 
@@ -127,4 +127,3 @@ submitBtn.onclick = saveHighscore;
 
 startBtn.onclick = quizStart;
 
-initialsEl.onkeyup = checkForEnter;
