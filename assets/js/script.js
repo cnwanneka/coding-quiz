@@ -1,11 +1,13 @@
 //Variables representing DOM elements
 
+let landingScreen = document.querySelector("start-screen");
+let quizScreen = document.querySelector("#quiz-section");
 let questionsEl = document.querySelector("#questions");
 let timerEl = document.querySelector("#timer");
-let choicesEl = document.querySelector("#options");
+let choicesEl = document.querySelector("#choices");
 let submitBtn = document.querySelector("#submit-score");
 let startBtn = document.querySelector("#start");
-let nameEl = document.querySelector("#name");
+let initialsEl = document.querySelector("#initials");
 let feedbackEl = document.querySelector("#feedback");
 let reStartBtn = document.querySelector("#restart");
 
@@ -19,11 +21,12 @@ let timerId;
 // Start of quiz
 
 function quizStart() {
-    timerId = setInterval(clockTick, 1000);
-    timerEl.textContent = time;
     let landingScreenEl = document.getElementById("start-screen");
     landingScreenEl.setAttribute("class", "hide");
     questionsEl.removeAttribute("class");
+    timerId = setInterval(tick, 1000);
+    timerEl.textContent = time;
+
     getQuestion();
 }
 
@@ -31,10 +34,10 @@ function quizStart() {
 
 function getQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
-  let promptEl = document.getElementById("question-words")
+    let promptEl = document.getElementById("question-title")
     promptEl.textContent = currentQuestion.prompt;
     choicesEl.innerHTML = "";
-    currentQuestion.options.forEach(function(choice, i) {
+    currentQuestion.choices.forEach(function(choice, i) {
         let choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("value", choice);
         choiceBtn.textContent = i + 1 + ". " + choice;
@@ -84,7 +87,7 @@ function quizEnd() {
 
 // Quiz ends when timer reaches 0.
 
-function clockTick() {
+function tick() {
     time--;
     timerEl.textContent = time;
     if (time <= 0) {
@@ -95,13 +98,13 @@ function clockTick() {
 // Save the scores in the local storage.
 
 function saveHighscore() {
-    let name = nameEl.value.trim();
-    if (name !== "") {
+    let initials = initialsEl.value.trim();
+    if (initials !== "") {
       let highscores =
         JSON.parse(window.localStorage.getItem("highscores")) || [];
       let newScore = {
         score: time,
-        name: name
+        initials: initials
       };
       highscores.push(newScore);
       window.localStorage.setItem("highscores", JSON.stringify(highscores));
@@ -114,12 +117,14 @@ function checkForEnter(event) {
         saveHighscore();
     }
 }
-nameEl.onkeyup = checkForEnter;
+
 
 // Save user's score with submit button.
 
 submitBtn.onclick = saveHighscore;
 
-// Restart the quiz.
+// Start the quiz.
 
 startBtn.onclick = quizStart;
+
+initialsEl.onkeyup = checkForEnter;

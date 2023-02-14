@@ -13,6 +13,14 @@ a:hover {
   color: #8570a5;
 }
 
+/**/
+
+.landing {
+  text-align: center;
+}
+
+
+
 button {
   display: inline-block;
   margin: 5px;
@@ -53,7 +61,7 @@ li:nth-child(odd) {
   background-color: #f3edfc;
 }
 
-.wrapper {
+.quiz {
   margin: 100px auto 0 auto;
   max-width: 600px;
 }
@@ -86,3 +94,4 @@ li:nth-child(odd) {
   top: 10px;
   right: 10px;
 }
+
