@@ -85,13 +85,13 @@ function endQuiz() {
 }
 
 
-// Quiz ends when timer reaches 0.
+// The quiz ends when the timer reaches 0.
 
 function tick() {
     time--;
     timerEl.textContent = time;
     if (time <= 0) {
-      quizEnd();
+      endQuiz();
     }
 }
 
