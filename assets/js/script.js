@@ -9,7 +9,7 @@ let submitBtn = document.querySelector("#submit-score");
 let startBtn = document.querySelector("#start");
 let initialsEl = document.querySelector("#initials");
 let feedbackEl = document.querySelector("#feedback");
-let reStartBtn = document.querySelector("#restart");
+let goBackBtn = document.querySelector("#restart");
 
 
 // Variables for the beginning part of the quiz.

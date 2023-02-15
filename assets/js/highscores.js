@@ -9,7 +9,7 @@ function printHighscores() {
     });
     highscores.forEach(function(score) {
       let liTag = document.createElement("li");
-      liTag.textContent = score.name + " - " + score.score;
+      liTag.textContent = score.initials + " - " + score.score;
       let olEl = document.getElementById("highscores");
       olEl.appendChild(liTag);
     });
