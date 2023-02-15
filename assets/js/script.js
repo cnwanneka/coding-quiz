@@ -18,6 +18,8 @@ let currentQuestionIndex = 0;
 let time = questions.length * 15;
 let timerId;
 
+
+
 // Start of quiz
 
 function quizStart() {
@@ -56,10 +58,8 @@ function questionClick() {
       }
       timerEl.textContent = time;
       feedbackEl.textContent = `Wrong! The correct answer was ${questions[currentQuestionIndex].answer}.`;
-      feedbackEl.style.color = "red";
     } else {
       feedbackEl.textContent = "Correct!";
-      feedbackEl.style.color = "green";
     }
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
@@ -67,7 +67,7 @@ function questionClick() {
     }, 2000);
     currentQuestionIndex++;
     if (currentQuestionIndex === questions.length) {
-      quizEnd();
+      endQuiz();
     } else {
       getQuestion();
     }
@@ -75,11 +75,11 @@ function questionClick() {
 
 // End of the quiz.
 
-function quizEnd() {
+function endQuiz() {
     clearInterval(timerId);
-    let endScreenEl = document.getElementById("quiz-end");
+    let endScreenEl = document.getElementById("end-quiz");
     endScreenEl.removeAttribute("class");
-    let finalScoreEl = document.getElementById("score-final");
+    let finalScoreEl = document.getElementById("final-score");
     finalScoreEl.textContent = time;
     questionsEl.setAttribute("class", "hide");
 }
