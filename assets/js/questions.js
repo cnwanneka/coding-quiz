@@ -13,7 +13,7 @@ let questions = [
     },
 
     {
-        title: "What javascipt method can we use to select an html element?",
+        title: "What javascript method can we use to select an html element?",
         choices: ["document.queryselector()", "document.getElementChild", "document.getElementById", "Both 1 and 3"],
         answer: "Both 1 and 3"
     },
