@@ -1,3 +1,5 @@
+![Screenshot (26)](https://user-images.githubusercontent.com/68708065/219039308-9b441933-0642-4308-9c98-ff66fbeb39da.png)
+![Screenshot (27)](https://user-images.githubusercontent.com/68708065/219039506-8ed18b72-2bfe-4cd5-8551-9500ec714e22.png)
 # coding-quiz
 
 https://cnwanneka.github.io/coding-quiz/
