@@ -3,6 +3,7 @@
 Description:
 
 The objective of this challenge is to build a timed, multiple-choice coding quiz application on Javascript fundamentals that stores high scores so that one can guage 
+
 their progress compared to their peers. This quiz keeps track of high scores and quiz-takers' initials.
 
 This application was challenging because it involved the use of a lot of new javascript concepts like using local storage, set Attribute, query Selectors, stringify and also the use of a timer.
